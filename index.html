@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Madison Junction: Reading the books behind Greater Yellowstone's conservation groups</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56'%3E%3Crect width='56' height='56' rx='11' fill='%23234B43'/%3E%3Cpath d='M12 11 C14 27 26 27 28 37' stroke='%233C7D97' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M44 11 C42 27 30 27 28 37' stroke='%23B98A4E' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M28 37 L28 48' stroke='%23EEF0EA' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{color-scheme:light;--ink:#18241F;--spruce:#234B43;--river:#3C7D97;--sediment:#B98A4E;--deficit:#9C4A33;--paper:#EEF0EA;--panel:#F6F7F3;--panel-2:#E5E8E0;--line:rgba(24,36,31,.14);--line-soft:rgba(24,36,31,.08);--muted:#5C6862;--display:"Fraunces",Georgia,serif;--body:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.mast{position:relative;overflow:hidden;border-bottom:2px solid var(--ink);background:var(--spruce);color:var(--paper)}
+.mast .contours{position:absolute;inset:0;opacity:.16;pointer-events:none}
+.mast .wrap{position:relative;padding:46px 28px 40px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--sediment);margin:0 0 14px}
+.mast h1{font-family:var(--display);font-weight:900;font-size:clamp(40px,7vw,76px);line-height:.96;letter-spacing:-.02em;margin:0}
+.mast .sub{font-family:var(--display);font-weight:400;font-style:italic;font-size:clamp(17px,2.4vw,22px);margin:18px 0 0;max-width:46ch;color:#DCE5DF}
+.byline{font-family:var(--mono);font-size:12.5px;color:#AFC1B6;margin-top:24px;letter-spacing:.02em}
+section{padding:52px 0;border-bottom:1px solid var(--line-soft)}
+.sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--river);margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.sec-label::before{content:"";width:26px;height:2px;background:var(--river)}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.6vw,36px);line-height:1.08;letter-spacing:-.015em;margin:0 0 16px;max-width:26ch}
+h3{font-family:var(--display);font-weight:600;font-size:19px;margin:0 0 6px}
+p{margin:0 0 16px;max-width:68ch}.lead{font-size:18px;color:#2c3a33}a{color:var(--river)}
+.vs-hero{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;background:var(--ink);border-radius:6px;padding:32px 30px;color:var(--paper);margin-top:6px}
+.vs-hero .side{text-align:center}.vs-hero .num{font-family:var(--mono);font-weight:600;font-size:clamp(48px,11vw,90px);line-height:.86;letter-spacing:-.03em}
+.vs-hero .gyc .num{color:#8FB8AE}.vs-hero .gvlt .num{color:var(--sediment)}
+.vs-hero .org{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:10px;color:#AFC1B6}
+.vs-hero .mid{font-family:var(--display);font-style:italic;font-size:15px;color:#AFC1B6}
+.vs-cap{font-size:13px;color:var(--muted);font-family:var(--mono);margin-top:12px;text-align:center}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.ctable{width:100%;min-width:600px;border-collapse:collapse;margin-top:8px;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.ctable th,.ctable td{padding:13px 16px;text-align:right;border-bottom:1px solid var(--line-soft);font-variant-numeric:tabular-nums}
+.ctable th{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.ctable td:first-child,.ctable th:first-child{text-align:left}.ctable td:first-child{font-size:14.5px}
+.ctable td:first-child small{display:block;color:var(--muted);font-size:12px;margin-top:2px;font-family:var(--body)}
+.ctable .v{font-family:var(--mono);font-weight:600;font-size:16px}.ctable tr:last-child td{border-bottom:none}.ctable tbody tr:hover{background:var(--panel-2)}
+.ctag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.orgbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 22px}
+.org-chip{font-family:var(--mono);font-size:13px;padding:9px 15px;border:1px solid var(--line);background:var(--panel);border-radius:999px;cursor:pointer;color:var(--ink);transition:.15s}
+.org-chip[aria-pressed="true"]{background:var(--spruce);color:var(--paper);border-color:var(--spruce)}
+.org-chip.soon{opacity:.5;cursor:not-allowed;border-style:dashed}.org-chip:focus-visible{outline:3px solid var(--river);outline-offset:2px}
+.model-pill{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--river);border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin-bottom:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:6px}
+.kpi{background:var(--panel);padding:18px 16px}.kpi .v{font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:-.02em;line-height:1}
+.kpi .k{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.35}.kpi .v.pos{color:var(--spruce)}.kpi .v.neg{color:var(--deficit)}
+.read{background:var(--spruce);color:#fff;border-radius:6px;padding:24px 26px;margin-top:22px}
+.read .sec-label{color:var(--sediment)}.read .sec-label::before{background:var(--sediment)}
+.read h3{color:#fff;font-size:21px}.read p{color:#D6E0D9;font-size:15px;max-width:72ch}.read p:last-child{margin-bottom:0}.read strong{color:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-top:22px}
+.chart-card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:18px 18px 12px}
+.chart-card h3{padding:0 2px}.chart-card .cap{font-size:12.5px;color:var(--muted);padding:0 2px 12px;font-family:var(--mono)}
+.chart-box{position:relative;height:260px}
+.barstack{display:flex;height:18px;border-radius:9px;overflow:hidden;margin:6px 0 14px}.barstack span{display:block;height:100%}
+.bar-legend{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13.5px}
+.bar-legend li{display:flex;align-items:center;gap:9px}.bar-legend i{width:11px;height:11px;border-radius:2px;flex:none}.bar-legend b{margin-left:auto;font-family:var(--mono);font-weight:600}
+.prog-legend{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px}
+.prog-legend li{display:grid;grid-template-columns:12px 1fr auto;gap:10px;align-items:start;font-size:13.5px}
+.prog-legend i{width:11px;height:11px;border-radius:2px;margin-top:5px;flex:none}
+.prog-legend .pn{font-weight:600}
+.prog-legend .pd{display:block;color:var(--muted);font-size:12.5px;margin-top:2px;font-weight:400;line-height:1.45}
+.prog-legend b{font-family:var(--mono);font-weight:600;white-space:nowrap;align-self:start}
+.bs-row{margin:16px 0}
+.bs-row .bs-h{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;margin-bottom:6px}
+.bs-row .bs-h b{font-family:var(--mono);font-weight:600;font-size:13px;color:var(--muted)}
+.bs-row .barstack{height:22px;border-radius:5px}
+.engage{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:linear-gradient(180deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-left:4px solid var(--sediment);border-radius:6px;padding:24px 28px;margin-top:22px}
+.engage .ico{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sediment);writing-mode:vertical-rl;transform:rotate(180deg);align-self:stretch;border-right:1px solid var(--line);padding-right:18px}
+.engage h3{margin-bottom:6px}.engage p{margin:0;font-size:15px;color:#2c3a33}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;margin-top:4px}
+.metric{border-top:2px solid var(--spruce);padding-top:12px}.metric .v{font-family:var(--mono);font-weight:600;font-size:21px}.metric .k{font-size:12.5px;color:var(--muted);margin-top:5px}
+.roadmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:10px}
+.road{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:16px 18px}
+.road .st{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}.road.done .st{color:var(--spruce)}.road.next .st{color:var(--sediment)}
+.road h4{margin:8px 0 4px;font-family:var(--display);font-size:16px;font-weight:600}.road p{font-size:13px;color:var(--muted);margin:0}
+.about{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:26px 28px}
+.about .mark{width:64px;height:64px;border-radius:50%;background:var(--spruce);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;font-size:24px}
+.about p{margin:0;font-size:15px}.about .edit{font-family:var(--mono);font-size:11px;color:var(--sediment);letter-spacing:.08em;text-transform:uppercase;margin-top:8px}
+footer{background:var(--ink);color:#AFC1B6;padding:32px 0;font-size:13px}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{color:#DCE5DF}
+.disc{font-family:var(--mono);font-size:11.5px;color:var(--muted);max-width:72ch;margin-top:16px}
+@media(max-width:780px){.grid2{grid-template-columns:1fr}.vs-hero{grid-template-columns:1fr;gap:8px}.engage{grid-template-columns:1fr}.engage .ico{writing-mode:horizontal-tb;transform:none;border-right:none;border-bottom:1px solid var(--line);padding:0 0 10px}.ctable td:first-child small{display:none}}
+.mj-mark{width:50px;height:50px;display:block;margin:0 0 18px;position:relative;z-index:1}
+.topnav{position:sticky;top:0;z-index:30;background:rgba(238,240,234,.93);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;gap:20px;align-items:center;padding:11px 28px;font-family:var(--mono);font-size:12.5px;max-width:1080px;margin:0 auto}
+.nav-brand{font-weight:600;color:var(--ink);margin-right:auto;letter-spacing:.04em}
+.topnav a{color:var(--muted);text-decoration:none;letter-spacing:.04em}.topnav a:hover{color:var(--spruce)}
+section[id]{scroll-margin-top:62px}
+.gloss-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(246px,1fr));gap:14px;margin-top:18px}
+.gloss-card{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--river);border-radius:6px;padding:18px 20px}
+.gloss-card h4{font-family:var(--display);font-size:17px;font-weight:600;margin:0 0 6px}
+.gloss-card p{font-size:14px;color:#2c3a33;margin:0 0 12px}
+.gloss-ex{font-family:var(--mono);font-size:12.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:10px;display:flex;gap:16px;flex-wrap:wrap}
+.gloss-ex b{color:var(--spruce);font-weight:600}
+@media(max-width:780px){.nav-in{gap:15px;overflow-x:auto;white-space:nowrap}.nav-brand{white-space:nowrap}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<header class="mast"><svg class="contours" preserveAspectRatio="none" viewBox="0 0 1080 300" aria-hidden="true"><g fill="none" stroke="#EEF0EA" stroke-width="1"><path d="M0,40 C220,10 360,80 540,60 C760,35 880,95 1080,70"/><path d="M0,90 C220,60 360,130 540,110 C760,85 880,145 1080,120"/><path d="M0,140 C220,110 360,180 540,160 C760,135 880,195 1080,170"/><path d="M0,190 C220,160 360,230 540,210 C760,185 880,245 1080,220"/><path d="M0,240 C220,210 360,280 540,260 C760,235 880,295 1080,270"/></g></svg>
+<div class="wrap"><svg class="mj-mark" viewBox="0 0 56 56" fill="none" aria-hidden="true"><path d="M12 7 C14 26 26 26 28 37" stroke="#3C7D97" stroke-width="3" stroke-linecap="round"/><path d="M44 7 C42 26 30 26 28 37" stroke="#B98A4E" stroke-width="3" stroke-linecap="round"/><path d="M28 37 L28 51" stroke="#EEF0EA" stroke-width="3.5" stroke-linecap="round"/></svg><p class="eyebrow">Madison Junction · Initiating Coverage</p><h1>Madison<br>Junction</h1>
+<p class="sub">A river is only as healthy as its headwaters. A mission is only as healthy as the finances beneath it.</p>
+<p class="byline">Reading the books behind Greater Yellowstone's conservation groups · by Zach DiProspero</p></div></header>
+<nav class="topnav"><div class="nav-in"><span class="nav-brand">Madison Junction</span><a href="#start">Start here</a><a href="#compare">Compare</a><a href="#org">Organizations</a><a href="#method">Method</a><a href="#about">About</a></div></nav>
+<div class="wrap">
+<section id="intro"><p class="sec-label">Why this exists</p><h2>A plain-language guide to how these groups are funded and run.</h2>
+<p class="lead">Every conservation group in this valley files a public tax return, and all of it is already on ProPublica. What is missing is the part a donor actually needs: is my money safe here, and is it being put to work? I read each group's filings the way an analyst reads a company's annual report, then explain what they say in plain terms.</p></section>
+
+<section id="start"><p class="sec-label">Start here</p><h2>A quick glossary of the key terms.</h2><p class="lead">A handful of terms come up over and over on this page. Here is what each one means, with real numbers from a couple of the groups so they are not just abstract.</p><div class="gloss-grid" id="gloss"></div></section>
+<section id="compare"><p class="sec-label">The comparison</p><h2>The peer set, side by side.</h2>
+<p class="lead">These groups all protect the same landscape, but they raise and spend their money in very different ways, and they lean on people differently too. Start with the sharpest contrast, how much each runs on volunteers versus paid staff:</p>
+<div class="vs-hero"><div class="side gvlt"><div class="num" id="vh-umw">106</div><div class="org">Waterkeeper · volunteers per staffer</div></div><div class="mid">vs.</div><div class="side gyc"><div class="num" id="vh-gyc">0.5</div><div class="org">GYC · volunteers per staffer</div></div></div>
+<p class="vs-cap">Reported volunteers per paid employee, latest year. These are the two ends of the set. In between: GVLT at 38, the Task Force near 20, WSE under 2.</p>
+<div class="table-scroll"><table class="ctable" style="margin-top:28px"><thead><tr><th>Metric</th><th>GYC <span class="ctag">advocacy</span></th><th>GVLT <span class="ctag">land trust</span></th><th>GRTF <span class="ctag">watershed</span></th><th>WSE <span class="ctag">working lands</span></th><th>UMW <span class="ctag">enforcement</span></th></tr></thead><tbody id="cmp-body"></tbody></table></div>
+<p class="disc">Each group's most recent Form 990 (FY2025 for GYC and GVLT, FY2024 for the others). Compare within model: a land trust holds land and easements and raises through events, so its cash ratios and cost-to-raise read differently than an advocacy group's by design, not by mismanagement.</p>
+<h3 style="margin-top:36px">Where the money sits</h3>
+<p class="lead" style="margin-top:6px">The balance sheets hold a surprise. The land GVLT protects barely appears on one, because conservation easements are held in trust, not owned, so they sit off the books. What shows instead is reserves, and the groups hold them in very different forms. GYC sits on a large investment portfolio. GVLT keeps a big slice in ready cash, its quick-strike fund. Waterkeeper has banked its surpluses into an investment reserve too, while WSE keeps its small cushion in plain cash. And the Task Force holds almost no cash at all, since most of what it owns is money it is still owed.</p>
+<div class="bs-compare" id="bs-compare"></div>
+<p class="disc">Asset composition, most recent Form 990 (Part X); FY2025 for GYC and GVLT, FY2024 for the others. "Land & buildings" is net fixed assets; conserved acres under easement are not capitalized, so the thing GVLT is best known for is invisible here. Note GVLT's slice of ready cash, the quick-strike fund.</p></section>
+
+<section id="org"><p class="sec-label">Coverage</p><h2 id="org-h2">Organization detail</h2>
+<div class="orgbar" role="group" aria-label="Choose organization">
+<button class="org-chip" data-org="gyc" aria-pressed="true">Greater Yellowstone Coalition</button>
+<button class="org-chip" data-org="gvlt" aria-pressed="false">Gallatin Valley Land Trust</button>
+<button class="org-chip" data-org="grtf" aria-pressed="false">Gallatin River Task Force</button>
+<button class="org-chip" data-org="wse" aria-pressed="false">Western Sustainability Exchange</button>
+<button class="org-chip" data-org="umw" aria-pressed="false">Upper Missouri Waterkeeper</button></div>
+<div class="model-pill" id="org-model"></div>
+<div class="kpis" id="org-kpis"></div>
+<div class="read" id="org-read"></div>
+<div class="grid2">
+<div class="chart-card"><h3>Revenue vs. expenses</h3><p class="cap" id="cap-re"></p><div class="chart-box"><canvas id="ch-re"></canvas></div></div>
+<div class="chart-card"><h3>Net assets over time</h3><p class="cap">The reserve cushion behind the mission</p><div class="chart-box"><canvas id="ch-na"></canvas></div></div></div>
+<div class="grid2">
+<div class="chart-card"><h3>Where each dollar goes</h3><p class="cap" id="cap-func"></p><div class="barstack" id="sb-func"></div><ul class="bar-legend" id="lg-func"></ul>
+<h3 style="margin-top:20px">What the program dollars fund</h3><p class="cap" id="cap-prog"></p><div class="barstack" id="sb-prog"></div><ul class="bar-legend" id="lg-prog"></ul></div>
+<div class="chart-card"><h3>Revenue mix</h3><p class="cap" id="cap-mix"></p><div class="chart-box" style="height:300px"><canvas id="ch-mix"></canvas></div></div></div>
+<div class="engage"><div class="ico">How you<br>engage</div><div><h3 id="eng-h"></h3><p id="eng-p"></p></div></div>
+</section>
+
+<section id="method"><p class="sec-label">Methodology</p><h2>How these are built</h2>
+<p>Every figure traces to a line on the Form 990: topline from Part I, revenue mix from Part VIII, functional and program spending from Part IX, the balance sheet from Part X, people and governance from Parts I and VI, public support from Schedule A. Each org's revenue components are reconciled to its reported total before anything is charted.</p>
+<div class="metrics"><div class="metric"><div class="v">5 of 5</div><div class="k">Peer set covered</div></div><div class="metric"><div class="v">50</div><div class="k">Org-years of 990 data analyzed</div></div><div class="metric"><div class="v">22</div><div class="k">Metrics computed per org-year</div></div></div></section>
+
+<section id="about"><p class="sec-label">Who built this</p><h2>About</h2>
+<div class="about"><div class="mark">ZD</div><div>
+<p>I'm <strong>Zach DiProspero</strong>. I'm not affiliated with any of the groups covered here. I just want to be active in the conservation community in southwest Montana, and I wanted one place to think clearly about where my time and money do the most good. So I started reading these organizations' tax filings the way I'd read a company's financials, and writing up what I found in plain language. This is that. If it helps you give or volunteer with a little more confidence, even better. <a href="https://linkedin.com/in/zachdiprospero">LinkedIn</a></p>
+<p class="edit">Draft, edit freely</p></div></div></section>
+
+<section id="roadmap"><p class="sec-label">Roadmap</p><h2>What's covered, what's coming</h2>
+<div class="roadmap"><div class="road done"><div class="st">Live</div><h4>Greater Yellowstone Coalition</h4><p>Advocacy and influence. Flagship coverage.</p></div>
+<div class="road done"><div class="st">Live</div><h4>Gallatin Valley Land Trust</h4><p>Land acquisition and trails. The community model.</p></div>
+<div class="road done"><div class="st">Live</div><h4>Gallatin River Task Force</h4><p>Watershed model. The river and fishing angle.</p></div>
+<div class="road done"><div class="st">Live</div><h4>Western Sustainability Exchange</h4><p>Working lands. The earned-revenue model.</p></div>
+<div class="road done"><div class="st">Live</div><h4>Upper Missouri Waterkeeper</h4><p>Clean-water enforcement. Following the water downstream.</p></div>
+<div class="road"><div class="st">Planned</div><h4>Science and grasslands</h4><p>Future expansions under review, including the Craighead Institute and American Prairie.</p></div></div></section>
+</div>
+<footer><div class="wrap"><div>Madison Junction · independent analysis · not affiliated with any organization covered</div><div>Data: IRS Form 990 via ProPublica Nonprofit Explorer</div></div></footer>
+<script>
+const DATA={"gyc": {"series": [{"y": 2011, "rev": 2511314, "exp": 2574899, "na": 6027643}, {"y": 2012, "rev": 2948141, "exp": 2540955, "na": 6777688}, {"y": 2013, "rev": 2537107, "exp": 2531571, "na": 6991694}, {"y": 2014, "rev": 3156269, "exp": 2147633, "na": 8147550}, {"y": 2015, "rev": 2984990, "exp": 2276706, "na": 8694419}, {"y": 2016, "rev": 3177591, "exp": 2965833, "na": 8858189}, {"y": 2017, "rev": 4851784, "exp": 3385142, "na": 10813967}, {"y": 2018, "rev": 5238195, "exp": 3633350, "na": 12606502}, {"y": 2019, "rev": 3176800, "exp": 3942830, "na": 12052800}, {"y": 2020, "rev": 4403947, "exp": 3989859, "na": 12944761}, {"y": 2021, "rev": 4409204, "exp": 3297146, "na": 14979213}, {"y": 2022, "rev": 6907411, "exp": 3831139, "na": 15829719}, {"y": 2023, "rev": 13368134, "exp": 4293530, "na": 25695630}, {"y": 2024, "rev": 8142794, "exp": 8956891, "na": 25120053}, {"y": 2025, "rev": 7031420, "exp": 6392590, "na": 26710926}], "fy25": {"prog": 5345450, "mgmt": 809824, "fund": 237316, "totexp": 6392590, "contrib": 6296526, "gov": 353410, "progrev": 0, "invest": 666062, "other": 68832, "totrev": 7031420, "na": 26710926}, "programs": [["Land & Wildlife", 3953229], ["Climate & Water", 729412], ["Tribal priorities", 662809]]}, "gvlt": {"series": [{"y": 2013, "rev": 672798, "exp": 659740, "na": 1645612}, {"y": 2014, "rev": 990936, "exp": 767286, "na": 2007024}, {"y": 2015, "rev": 1565881, "exp": 953437, "na": 2300733}, {"y": 2016, "rev": 2207304, "exp": 1088620, "na": 3402213}, {"y": 2017, "rev": 1112474, "exp": 994964, "na": 3783030}, {"y": 2018, "rev": 3557451, "exp": 1221226, "na": 6299937}, {"y": 2019, "rev": 1352222, "exp": 1246269, "na": 6518811}, {"y": 2020, "rev": 2237799, "exp": 1419616, "na": 7299824}, {"y": 2021, "rev": 2137454, "exp": 1481027, "na": 9008751}, {"y": 2022, "rev": 4279011, "exp": 3068607, "na": 9437512}, {"y": 2023, "rev": 3937748, "exp": 2187416, "na": 11622332}, {"y": 2024, "rev": 4872360, "exp": 3123049, "na": 13941051}, {"y": 2025, "rev": 3719249, "exp": 3705984, "na": 14643766}], "fy25": {"prog": 2864905, "mgmt": 324631, "fund": 516448, "totexp": 3705984, "contrib": 3364713, "gov": 226005, "progrev": 102153, "invest": 391163, "other": -138780, "totrev": 3719249, "na": 14643766}, "programs": [["Land conservation", 1967321], ["Community trails", 747503], ["Education", 150081]]}, "cmp": {"gyc": {"Organization": "Greater Yellowstone Coalition", "Latest FY": 2025, "% to Programs": 0.836194719198322, "Cost to Raise $1": 0.0376899896863763, "Months of Cash": 0.390996450577935, "Months LUNA": 30.8826957461686, "Reserve (yrs)": 4.17842001442295, "Contributions % Rev": 0.895484269180336, "Public Support %": 0.6431, "Volunteers / Emp": 0.485714285714286, "Revenue / Emp": 200897.714285714, "Deployment Rate": 0.758367257731405, "Total Revenue": 7031420, "Total Net Assets": 26710926, "Revenue CAGR": 0.0763133222715526, "Revenue Volatility": 2.17585784271973, "Surplus Yrs": 12, "Yrs on File": 15}, "gvlt": {"Organization": "Gallatin Valley Land Trust", "Latest FY": 2025, "% to Programs": 0.773048399561358, "Cost to Raise $1": 0.153489465520536, "Months of Cash": 11.438698062377, "Months LUNA": 17.7650664438918, "Reserve (yrs)": 3.95138403187925, "Contributions % Rev": 0.904675379357499, "Public Support %": 0.7759, "Volunteers / Emp": 37.6470588235294, "Revenue / Emp": 218779.352941176, "Deployment Rate": 0.671428825696855, "Total Revenue": 3719249, "Total Net Assets": 14643766, "Revenue CAGR": 0.153136928198305, "Revenue Volatility": 1.67248198654725, "Surplus Yrs": 13, "Yrs on File": 13}, "grtf": {"Organization": "Gallatin River Task Force", "Latest FY": 2024, "% to Programs": 0.7819172931962943, "Cost to Raise $1": 0.1218556154197506, "Months of Cash": 0.6337084193251975, "Months LUNA": 3.760598650160143, "Reserve (yrs)": 0.5381789198345434, "Contributions % Rev": 0.989570119802678, "Public Support %": 0.9958, "Volunteers / Emp": 19.555555555555557, "Revenue / Emp": 228616.66666666666, "Deployment Rate": 0.9052103704504151, "Total Revenue": 2057550, "Total Net Assets": 1099929, "Revenue CAGR": 0.2980971192555082, "Revenue Volatility": 2.0230875292532233, "Surplus Yrs": 8, "Yrs on File": 10, "_EarliestFY": 2015, "_LatestRev": 2057550, "_EarliestRev": 196601}, "wse": {"Organization": "Western Sustainability Exchange", "Latest FY": 2024, "% to Programs": 0.8200317094447027, "Cost to Raise $1": 0.013933035115447648, "Months of Cash": 5.775504772335101, "Months LUNA": 5.343033791570891, "Reserve (yrs)": 0.4605344760619162, "Contributions % Rev": 0.6438699615221892, "Public Support %": 0.7278, "Volunteers / Emp": 1.8181818181818181, "Revenue / Emp": 72627.45454545454, "Deployment Rate": 0.972695938976171, "Total Revenue": 798902, "Total Net Assets": 361637, "Revenue CAGR": 0.15395522402227346, "Revenue Volatility": 0.7938739281812157, "Surplus Yrs": 4, "Yrs on File": 7, "_EarliestFY": 2018, "_LatestRev": 798902, "_EarliestRev": 338345}, "umw": {"Organization": "Upper Missouri Waterkeeper", "Latest FY": 2024, "% to Programs": 0.848292051784649, "Cost to Raise $1": 0.054154061199818714, "Months of Cash": 2.3280221270133956, "Months LUNA": 19.352787957202516, "Reserve (yrs)": 1.7668699108256567, "Contributions % Rev": 0.9599931543823021, "Public Support %": 0.743, "Volunteers / Emp": 106.33333333333333, "Revenue / Emp": 391491.3333333333, "Deployment Rate": 0.5860049024086541, "Total Revenue": 1174474, "Total Net Assets": 1140276, "Revenue CAGR": 0.512471632909091, "Revenue Volatility": 1.7714398336179333, "Surplus Yrs": 5, "Yrs on File": 5, "_EarliestFY": 2020, "_LatestRev": 1174474, "_EarliestRev": 224437}}, "grtf": {"series": [{"y": 2015, "rev": 196601, "exp": 167582, "na": 47937}, {"y": 2016, "rev": 353500, "exp": 323260, "na": 78177}, {"y": 2017, "rev": 530662, "exp": 514195, "na": 94644}, {"y": 2018, "rev": 678567, "exp": 698446, "na": 116141}, {"y": 2019, "rev": 1301038, "exp": 699430, "na": 717749}, {"y": 2020, "rev": 899245, "exp": 761646, "na": 855348}, {"y": 2021, "rev": 741373, "exp": 901541, "na": 695180}, {"y": 2022, "rev": 1143872, "exp": 957133, "na": 929119}, {"y": 2023, "rev": 1296151, "exp": 1259600, "na": 965670}, {"y": 2024, "rev": 2057550, "exp": 2043798, "na": 1099929}], "fy25": {"prog": 1598081, "mgmt": 197608, "fund": 248109, "totexp": 2043798, "contrib": 2036090, "gov": 1208123, "progrev": 1540, "invest": 9679, "other": 10241, "totrev": 2057550, "na": 1099929}, "programs": [["Watershed programs", 1598081]]}, "wse": {"series": [{"y": 2018, "rev": 338345, "exp": 451921, "na": 133745}, {"y": 2019, "rev": 538369, "exp": 396975, "na": 278574}, {"y": 2020, "rev": 560337, "exp": 499761, "na": 339150}, {"y": 2021, "rev": 585213, "exp": 458447, "na": 465916}, {"y": 2022, "rev": 516543, "exp": 612376, "na": 370083}, {"y": 2023, "rev": 723262, "exp": 745355, "na": 347990}, {"y": 2024, "rev": 798902, "exp": 785255, "na": 361637}], "fy25": {"prog": 643934, "mgmt": 134154, "fund": 7167, "totexp": 785255, "contrib": 514389, "gov": 0, "progrev": 224343, "invest": 7877, "other": 52293, "totrev": 798902, "na": 361637}, "programs": [["Regenerative ranching programs", 643934]]}, "umw": {"series": [{"y": 2020, "rev": 224437, "exp": 115409, "na": 154795}, {"y": 2021, "rev": 271121, "exp": 177388, "na": 248528}, {"y": 2022, "rev": 362247, "exp": 251739, "na": 337192}, {"y": 2023, "rev": 649260, "exp": 381494, "na": 619785}, {"y": 2024, "rev": 1174474, "exp": 645365, "na": 1140276}], "fy25": {"prog": 547458, "mgmt": 36849, "fund": 61058, "totexp": 645365, "contrib": 1127487, "gov": 0, "progrev": 0, "invest": 46987, "other": 0, "totrev": 1174474, "na": 1140276}, "programs": [["Advocacy & enforcement", 547458]]}};
+const fmtUSD=n=>(n<0?"-":"")+"$"+Math.abs(Math.round(n)).toLocaleString();
+const fmtM=n=>"$"+(n/1e6).toFixed(2)+"M";const pct=n=>(n*100).toFixed(1)+"%";
+const C={ink:"#18241F",spruce:"#234B43",river:"#3C7D97",sediment:"#B98A4E",deficit:"#9C4A33",muted:"#5C6862",line:"rgba(24,36,31,.12)"};
+Chart.defaults.font.family="'IBM Plex Sans',sans-serif";Chart.defaults.font.size=12;Chart.defaults.color=C.muted;
+const CMP=DATA.cmp;
+const rows=[["Total revenue","latest year","Total Revenue","M"],["Reserve","Net assets / annual expenses","Reserve (yrs)","y"],["Share spent on programs","Of total expenses","% to Programs","p"],["Cost to raise $1","Fundraising / contributions","Cost to Raise $1","c"],["Volunteers per employee","Reported volunteers / staff","Volunteers / Emp","x"],["Public support","Schedule A diversification","Public Support %","p"],["Revenue from gifts","Contributions / revenue","Contributions % Rev","p"],["Deployment rate","Lifetime spend / lifetime revenue","Deployment Rate","p"],["Surplus years on record","Years with positive net income","Surplus Yrs","n"]];
+const cell=(v,t)=>{if(v==null||v==="")return"--";if(t==="M")return fmtM(v);if(t==="y")return v.toFixed(1)+" yrs";if(t==="p")return pct(v);if(t==="c")return"$"+v.toFixed(2);if(t==="x")return v.toFixed(1);if(t==="n")return Math.round(v);return v;};
+const cb=document.getElementById("cmp-body");
+rows.forEach(r=>{const tr=document.createElement("tr");tr.innerHTML=`<td>${r[0]}<small>${r[1]}</small></td><td class="v">${cell(CMP.gyc[r[2]],r[3])}</td><td class="v">${cell(CMP.gvlt[r[2]],r[3])}</td><td class="v">${cell(CMP.grtf[r[2]],r[3])}</td><td class="v">${cell(CMP.wse[r[2]],r[3])}</td><td class="v">${cell(CMP.umw[r[2]],r[3])}</td>`;cb.appendChild(tr);});
+document.getElementById("vh-gyc").textContent=(CMP.gyc["Volunteers / Emp"]||0).toFixed(1);
+document.getElementById("vh-umw").textContent=Math.round(CMP.umw["Volunteers / Emp"]||0);
+const GLOSS=[
+{t:"Form 990",d:"A nonprofit's public tax return, the closest thing it has to a company's annual report. Everything on this site comes from it."},
+{t:"Share to programs",d:"Of every dollar spent, how much reaches the actual mission instead of offices and admin. Higher is usually better, but the right level depends on the model.",ex:["% to Programs","p"]},
+{t:"Cost to raise $1",d:"How much a group spends to bring in one dollar of donations. Leaner is better, and events cost more than big grants do.",ex:["Cost to Raise $1","c"]},
+{t:"Operating reserve",d:"How long the group could keep running if the money stopped tomorrow, measured in years of expenses saved up.",ex:["Reserve (yrs)","y"]},
+{t:"Public support",d:"How spread out the funding is. A high score means lots of donors chip in, not dependence on a few big checks.",ex:["Public Support %","p"]},
+{t:"Volunteers per employee",d:"How hands-on the group is. A high number means lots of volunteers for every paid staffer, boots on the ground.",ex:["Volunteers / Emp","x"]},
+{t:"Deployment rate",d:"Of every dollar raised over the years, how much got spent on the work versus banked for later.",ex:["Deployment Rate","p"]},
+{t:"Lumpy revenue",d:"Income that jumps around year to year. Normal for land trusts that get big one-time land gifts, so judge them on the multi-year pattern, not a single year."}
+];
+const gg=document.getElementById("gloss");
+GLOSS.forEach(g=>{let ex="";if(g.ex){ex=`<div class="gloss-ex"><span>GYC <b>${cell(CMP.gyc[g.ex[0]],g.ex[1])}</b></span><span>GVLT <b>${cell(CMP.gvlt[g.ex[0]],g.ex[1])}</b></span></div>`;}gg.innerHTML+=`<div class="gloss-card"><h4>${g.t}</h4><p>${g.d}</p>${ex}</div>`;});
+const BS={gyc:{cash:208290,invest:24383497,recv:125000,fixed:2196205,other:231590,tot:27144582},
+ gvlt:{cash:3532636,invest:10186402,recv:385164,fixed:1366096,other:487870,tot:15958168},
+ grtf:{cash:107931,invest:0,recv:1155792,fixed:7862,other:301833,tot:1573418},
+ wse:{cash:377937,invest:0,recv:0,fixed:12000,other:330,tot:390267},
+ umw:{cash:125202,invest:923126,recv:0,fixed:99475,other:0,tot:1147803}};
+const bsSeg=[["Investments","invest",C.spruce],["Ready cash","cash",C.river],["Receivables (owed, not in hand)","recv",C.sediment],["Land & buildings","fixed","#6B8E7F"],["Other","other","#8a9a92"]];
+(function(){const bsc=document.getElementById("bs-compare");if(!bsc)return;
+ const row=(k,label)=>{const o=BS[k];const segs=bsSeg.map(s=>`<span style="width:${o[s[1]]/o.tot*100}%;background:${s[2]}" title="${s[0]}"></span>`).join("");
+  return `<div class="bs-row"><div class="bs-h"><span>${label}</span><b>${fmtM(o.tot)} in assets</b></div><div class="barstack">${segs}</div></div>`;};
+ bsc.innerHTML=row("gyc","Greater Yellowstone Coalition")+row("gvlt","Gallatin Valley Land Trust")+row("grtf","Gallatin River Task Force")+row("wse","Western Sustainability Exchange")+row("umw","Upper Missouri Waterkeeper")+
+  '<ul class="bar-legend" style="flex-direction:row;flex-wrap:wrap;gap:16px;margin-top:10px">'+bsSeg.map(s=>`<li><i style="background:${s[2]}"></i>${s[0]}</li>`).join("")+'</ul>';})();
+const META={
+ gyc:{name:"Greater Yellowstone Coalition",model:"Ecosystem advocacy · policy, legal, and coalition work across MT / WY / ID",
+   read:["A policy heavyweight, built for the long haul.","GYC's Form 990 shows a long-term horizon: consistent budget surpluses and plentiful liquid unrestricted net assets to cover expenses. They spend just <strong>4 cents to raise a dollar</strong>, and <strong>84 cents of every dollar spent</strong> goes to their programs. Volunteer numbers dropped during COVID after a popular community bike ride ended, and have not grown meaningfully since. They now build a groundswell of support through the legislative process, mobilizing voices instead of bodies."],
+   eng:["Almost entirely monetary and online activism.","They run few events to mobilize boots on the ground in the local community. Sign up for their mailing list to receive calls to action like signing petitions and calling representatives."]},
+ gvlt:{name:"Gallatin Valley Land Trust",model:"Land trust · conservation easements, acquisition, and community trails",
+   read:["High-impact land deals, and the trails that follow.","GVLT completes high-impact land transactions to protect pieces for conservation, then maintains the trails and access in those places. They park significant cash in a quick-strike fund for the flexibility to act on time-sensitive opportunities. The balance sheet shows about <strong>4 years of reserves</strong>, with liabilities well covered by assets. Revenue is lumpy, a natural mode for a land trust that relies on easement gifts. It costs about <strong>15 cents to raise a dollar</strong> and <strong>77 cents of each dollar spent</strong> reaches programs, because they raise through events rather than big grants. Their signature is people: they mobilize <strong>38 volunteers for every employee</strong>, largely toward trail maintenance."],
+   eng:["Give time, not just money.","GVLT does an exceptional job of growing a deep connection between the Bozeman area and the open spaces around it. Engage by using the trails they maintain, then pay it forward by showing up for their plentiful volunteer opportunities."]},
+ grtf:{name:"Gallatin River Task Force",model:"Watershed science · Gallatin River monitoring, restoration, and water conservation, focused on Big Sky",
+   read:["Vital work on the Gallatin, run close to the edge.","The Task Force protects and restores the Gallatin, focused on the Big Sky community, and has grown more than tenfold since 2015. About <strong>78 cents of every dollar</strong> reaches programs, but it runs lean: a reserve of only about <strong>half a year</strong>, where GYC and GVLT each sit on around four. Government grants fund about <strong>59% of revenue</strong>, and it holds just <strong>$108,000 in cash</strong> while being owed over $1.15 million. That is how reimbursement funding works: do the work, then wait to get paid. Normal, but it leaves little cushion if that money slows down or shows up late."],
+   eng:["Hands-on, and local to Big Sky.","They mobilize a ton of people, around <strong>20 volunteers for every employee</strong>. If you want to get involved close to Big Sky, this is a great place to show up. Unrestricted dollars go furthest here, since cash is the thing they have least of."]},
+ wse:{name:"Western Sustainability Exchange",model:"Working-lands stewardship · regenerative ranching, earned-revenue funded, based in Livingston",
+   read:["Conservation that largely pays its own way.","WSE helps ranchers adopt regenerative practices, and it funds itself unlike anyone else here: it earns about <strong>a third of its revenue</strong> and takes <strong>no government money</strong>. It runs lean, a reserve of about half a year, but its resilience is independence rather than a deep cushion, spread across close to eight earned streams from carbon-sequestration payments to conference fees to the Livingston Farmers Market. The standout is a new subscription tool, the Land Health Dashboard, that ranchers pay to track their own grazing and soil data. A homegrown SaaS product is unique in this set."],
+   eng:["Back a model that pays for itself, or just shop the market.","Your support helps a lean operation stay above the line while its earned revenue matures. You can also engage without a check: shop the Livingston Farmers Market and you are backing WSE's regenerative ranchers directly. And if you ranch, the workshops, network, and tools are the front door."]},
+ umw:{name:"Upper Missouri Waterkeeper",model:"Clean-water enforcement · Clean Water Act litigation and watchdogging across the Upper Missouri Basin, based in Bozeman",
+   read:["Built for a long fight.","Waterkeeper is the only nonprofit watching the whole 25,000-square-mile Upper Missouri Basin, and its edge is legal: it sues polluters under the Clean Water Act, appeals state pollution permits, and leans on Montana's constitutional right to clean water. Small and young, it has grown fast and run a surplus every year, and it banks the money, deploying only <strong>59 cents of every dollar</strong> into a reserve worth close to <strong>two years</strong> of expenses. Lawsuits are slow and expensive, so that reserve is what lets it outlast the polluters and agencies it takes on. It takes <strong>no government money</strong>, and it runs on volunteers: <strong>319 against three staff</strong>, the eyes on the water across the basin."],
+   eng:["Be their eyes on the water.","Join the volunteer monitoring network, and if you see something wrong on a river, call their pollution hotline and send a photo. If you give, give unrestricted, since the freedom to fund long legal fights is the whole point of this group."]}
+};
+const PROGDESC={
+ gyc:["Policy, legal, and coalition fights to keep public lands public and protect species like grizzly and bison. Protection through influence, not by buying land.","Climate resilience work plus river and water-quality initiatives across the ecosystem.","Partnerships advancing Indigenous-led conservation, including bison restoration to tribal lands."],
+ gvlt:["Buying land and conservation easements and holding them in trust, then monitoring them year after year. Protection through ownership.","Building and maintaining the Main Street to the Mountains trail network and the public access that comes with it.","Outreach and programs that connect the community to the land they protect."],
+ grtf:["Water-quality monitoring, river and stream restoration, water conservation, and community stewardship on the Gallatin, run as one integrated program."],
+ wse:["Regenerative ranching programs: rancher education and workshops, technical assistance, the rancher network, carbon-market access, the Land Health Dashboard tool, and the Livingston Farmers Market."],
+ umw:["Clean Water Act enforcement and watchdogging: citizen lawsuits against polluters, review and appeal of state pollution permits, and volunteer pollution patrols and monitoring across the basin."]
+};
+let charts={};
+function destroyCharts(){Object.values(charts).forEach(c=>c&&c.destroy());charts={};}
+function kpi(v,k,cls){return `<div class="kpi"><div class="v ${cls||''}">${v}</div><div class="k">${k}</div></div>`;}
+function bar(el,leg,parts){const tot=parts.reduce((s,p)=>s+p[1],0);
+ document.getElementById(el).innerHTML=parts.map(p=>`<span style="width:${p[1]/tot*100}%;background:${p[2]}"></span>`).join("");
+ document.getElementById(leg).innerHTML=parts.map(p=>`<li><i style="background:${p[2]}"></i>${p[0]}<b>${pct(p[1]/tot)}</b></li>`).join("");}
+function renderOrg(key){
+ const o=DATA[key],f=o.fy25,c=CMP[key],meta=META[key];
+ const FY="FY"+(c["Latest FY"]||o.series[o.series.length-1].y);
+ document.getElementById("org-h2").textContent=meta.name;
+ document.getElementById("org-model").textContent=meta.model;
+ const ni=f.totrev-f.totexp;
+ document.getElementById("org-kpis").innerHTML=
+  kpi(pct(f.prog/f.totexp),"To programs")+kpi("$"+c["Cost to Raise $1"].toFixed(2),"To raise $1")+
+  kpi(c["Reserve (yrs)"].toFixed(1)+" yrs","Operating reserve")+kpi(fmtM(f.totrev),"Total revenue · "+FY)+
+  kpi((ni>=0?"+":"")+fmtUSD(ni),"Net income · "+FY,ni>=0?"pos":"neg")+kpi(c["Volunteers / Emp"].toFixed(1),"Volunteers / employee");
+ document.getElementById("org-read").innerHTML=`<p class="sec-label">The read</p><h3>${meta.read[0]}</h3><p>${meta.read[1]}</p>`;
+ document.getElementById("eng-h").textContent=meta.eng[0];
+ document.getElementById("eng-p").textContent=meta.eng[1];
+ bar("sb-func","lg-func",[["Programs",f.prog,C.spruce],["Management",f.mgmt,C.river],["Fundraising",f.fund,C.sediment]]);
+ (function(){const cols=[C.spruce,C.river,C.sediment];const tot=o.programs.reduce((s,p)=>s+p[1],0);
+ document.getElementById("sb-prog").innerHTML=o.programs.map((p,i)=>`<span style="width:${p[1]/tot*100}%;background:${cols[i]}"></span>`).join("");
+ const lg=document.getElementById("lg-prog");lg.className="prog-legend";
+ lg.innerHTML=o.programs.map((p,i)=>`<li><i style="background:${cols[i]}"></i><span class="pn">${p[0]}<span class="pd">${PROGDESC[key][i]}</span></span><b>${pct(p[1]/tot)}</b></li>`).join("");})();
+ document.getElementById("cap-re").textContent=o.series[0].y+"–"+o.series[o.series.length-1].y+" · IRS Form 990";
+ document.getElementById("cap-func").textContent="Functional spending · "+FY;
+ document.getElementById("cap-prog").textContent="By area, "+FY+". The same label can mean very different work.";
+ document.querySelectorAll(".org-chip[data-org]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.org===key));
+ destroyCharts();
+ const yrs=o.series.map(d=>d.y);
+ charts.re=new Chart(document.getElementById("ch-re"),{type:"line",data:{labels:yrs,datasets:[{label:"Revenue",data:o.series.map(d=>d.rev),borderColor:C.river,backgroundColor:"rgba(60,125,151,.10)",fill:true,tension:.3,pointRadius:0,borderWidth:2.5},{label:"Expenses",data:o.series.map(d=>d.exp),borderColor:C.sediment,borderDash:[5,4],fill:false,tension:.3,pointRadius:0,borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"bottom",labels:{boxWidth:12,usePointStyle:true}},tooltip:{callbacks:{label:c=>c.dataset.label+": "+fmtUSD(c.parsed.y)}}},scales:{y:{ticks:{callback:v=>"$"+(v/1e6).toFixed(1)+"M"},grid:{color:C.line}},x:{grid:{display:false}}}}});
+ charts.na=new Chart(document.getElementById("ch-na"),{type:"line",data:{labels:yrs,datasets:[{label:"Net assets",data:o.series.map(d=>d.na),borderColor:C.spruce,backgroundColor:"rgba(35,75,67,.12)",fill:true,tension:.3,pointRadius:0,borderWidth:2.5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmtUSD(c.parsed.y)}}},scales:{y:{ticks:{callback:v=>"$"+(v/1e6).toFixed(0)+"M"},grid:{color:C.line}},x:{grid:{display:false}}}}});
+ const mix=[["Contributions",f.contrib,C.spruce],["Investment",f.invest,C.river],["Program revenue",f.progrev,C.sediment],["Other",f.other,"#8a9a92"]].filter(m=>m[1]>0);
+ document.getElementById("cap-mix").textContent=FY+(f.other<0?" · net fundraising/asset losses excluded":"");
+ charts.mix=new Chart(document.getElementById("ch-mix"),{type:"doughnut",data:{labels:mix.map(m=>m[0]),datasets:[{data:mix.map(m=>m[1]),backgroundColor:mix.map(m=>m[2]),borderColor:"#F6F7F3",borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,cutout:"60%",plugins:{legend:{position:"bottom",labels:{boxWidth:11,usePointStyle:true,font:{size:11}}},tooltip:{callbacks:{label:c=>c.label+": "+fmtUSD(c.parsed)}}}}});
+}
+document.querySelectorAll(".org-chip[data-org]").forEach(b=>b.addEventListener("click",()=>renderOrg(b.dataset.org)));
+renderOrg("gyc");
+</script></body></html>
